@@ -1,4 +1,4 @@
-# GiFo-RFC-0171 (V0.5 - Working Draft – Under Review)
+# GiFo-RFC-0171 (V0.5.1 - Working Draft – Under Review)
 
 Agentic Commerce and Payment Authorization - Evaluation
 
