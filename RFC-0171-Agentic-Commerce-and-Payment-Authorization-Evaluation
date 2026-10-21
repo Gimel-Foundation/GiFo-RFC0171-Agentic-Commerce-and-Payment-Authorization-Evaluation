@@ -1,9 +1,9 @@
 
     Gimel Foundation gGmbH i.G.                                         G. Wehberg and the Architecture
     GiFo-Request for Comments: 0171                                     Working Group of Gimel
-    Obsoletes: -                                                        Foundation
-    Category: Informational                                             19. October 2026
-    Version: 0.5 (Draft – Under Vendor Review)
+    Obsoletes: v 0.5 (19. Oct. 2026)                                    Foundation
+    Category: Informational                                             21. October 2026
+    Version: 0.5.1 (Draft – Under Vendor Review)
 
 =======================================================
 Agentic Commerce and Payment Authorization – Evaluation
@@ -761,6 +761,65 @@ Legal recognition is a further layer, not a reason to discount those capabilitie
 GAuth + G-Commerce provides an interoperable authority and enforcement foundation for cross-border commerce. It enables counterparties to verify delegation while preserving independent control, and supplies correlated evidence for accountability. It facilitates cross-border legal reliance without purporting to create universal legal recognition.\*\*
 
 Implication for AP2: AP2's verified delegation mechanisms are relevant evidence, not proof of cross-border recognition. The practical objective is independently verifiable authority plus agreed reliance rules—not a claim that one proprietary platform or one domestic infrastructure settles both.
+
+
+
+Relationship to EUDI Wallets and SCARLET (informative)
+------------------------------------------------------
+
+G-Commerce inherits GAuth's interoperability architecture under RFC 0116.
+This provides the architectural basis for verifying principal-origin
+authority across organizational and jurisdictional boundaries while
+preserving the applicable trust and sovereignty requirements. RFC 0170
+adds the commerce and payment integration layer; it does not replace
+that inherited authority architecture.
+
+EUDI Wallets and the European Payments Council's SCARLET initiative
+address related but distinct functions. Their relationship to agentic
+commerce is best understood by separating three questions:
+
+* **Customer authentication:** Who is the customer, and which identity
+  or attribute evidence can the relying party verify?
+* **Delegated authority:** Which principal authorized which agent to
+  perform which action, within which limits, and does that authority
+  remain valid when the action is committed?
+* **Payment permission and execution:** Does the payment service permit
+  the transaction, and under which payment-system rules is it executed?
+
+Wallet-based authentication and attribute presentation can supply
+evidence relevant to establishing a principal's identity or
+representative capacity. They do not, by themselves, establish the
+complete delegation chain, its current scope, ancestor freshness,
+revocation propagation or shared spending constraints. Similarly, a
+valid delegated-authority decision does not replace the payment
+service's own authentication, authorization and execution requirements.
+
+SCARLET, announced by the European Payments Council on 19 October 2026,
+is a scheme-development initiative concerning the use of EUDI Wallets
+for payment authentication. It is therefore relevant to the
+authentication and payment-facing parts of this architecture. The
+announcement alone does not establish a separate agent-authority
+mechanism or coverage of the C1--C9 criteria used in this evaluation.
+
+A potential composition would retain these distinct responsibilities:
+wallet evidence supports identity and, where available and accepted,
+representative-capacity verification; GAuth evaluates the agent's
+principal-origin authority; and the payment service applies its own
+payment controls. Under the RFC 0170 integration model, downstream
+payment permission cannot override a negative authority decision.
+Correlated evidence should distinguish the principal, delegation,
+authority verdict, payment verdict and transaction outcome rather than
+treating a successful wallet authentication as proof of all five.
+
+For cross-border use, the inherited GAuth architecture supports
+technical verification of authority without requiring that authority
+to be replaced by trust in a particular commerce platform. Actual
+reliance additionally depends on accepted issuers, applicable trust
+frameworks, representative-capacity evidence, sovereignty requirements
+and the relevant legal and contractual arrangements. 
+
+
+
 
 7. Conclusions
 ==============
